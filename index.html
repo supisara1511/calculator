@@ -1,0 +1,97 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Caculator</title>
+
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Prompt'); 
+
+
+</style>
+<style>
+.font1{
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.button {
+
+    margin: 2px;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+
+}
+</style>
+
+
+
+</head>
+
+<body >
+
+    <div class="font1" style="padding-top: 30px">
+        <h1>CALCULATOR</h1>
+        <form name="form">
+        <input class="font1" id="display" type="text" name="display" style="width: 200px; height: 42; text-align: right;">
+        <br>
+        <br>
+        <input class="button font1" type="button" value="7" onclick="addnum(7)">
+        <input class="button font1" type="button" value="8" onclick="addnum(8)">
+        <input class="button font1" type="button" value="9" onclick="addnum(9)">
+        <input class="button mathButtons font1" type="button" value="+" onclick="addnum('+')">
+        
+        <br>
+        <input class="button font1" type="button" value="4" onclick="addnum(4)">
+        <input class="button font1" type="button" value="5" onclick="addnum(5)">
+        <input class="button font1" type="button" value="6" onclick="addnum(6)">
+        <input class="button mathButtons font1" type="button" value="-" onclick="addnum('-')">
+        
+        <br>
+        <input class="button font1" type="button" value="1" onclick="addnum(1)">
+        <input class="button font1" type="button" value="2" onclick="addnum(2)">
+        <input class="button font1" type="button" value="3" onclick="addnum(3)">
+        <input class="button mathButtons font1" type="button" value="x" onclick="addnum('*')">
+        
+        <br>
+        <input id="clearButton" class="button font1" type="button" value="C" onclick="reset()">
+        <input class="button font1" type="button" value="0" onclick="addnum(0)">
+        <input class="button font1" type="button" value="=" onclick="ans()">   
+        <input class="button mathButtons" type="button" value="/" onclick="addnum('/') '">
+        <br>
+        </form>
+
+    </div>
+
+
+</body>
+
+<script>
+        function addnum(num){
+             document.form.display.value = document.form.display.value+num;
+        }
+
+        function ans(){
+            var text = document.form.display.value;
+            if(text){
+                document.form.display.value = eval(text);
+            }
+        }
+
+        function reset(){
+            document.form.display.value = "";
+        }
+
+        function back(){
+            var text = document.form.display.value;
+            document.form.display.value = text.substring(0, text.length - 1);
+        }
+    </script>
+
+
+</html>
